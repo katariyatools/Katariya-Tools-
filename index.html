@@ -3,691 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katariya Tools - 45+ Multi Tools</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Multi Tool Hub</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            background-color: #1E1E2F;
+            background: #1E1E2F;
             color: #EAEAEA;
-            line-height: 1.6;
-            padding-bottom: 40px;
+            text-align: center;
+        }
+
+        .header {
+            background: #2B2D42;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFD700;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: #2B2D42;
-            padding: 20px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-icon {
-            color: #FFD700;
-            font-size: 28px;
-        }
-
-        .logo-text {
-            font-size: 28px;
-            font-weight: 700;
-            color: #FFD700;
-            text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
-        }
-
-        .tagline {
-            font-size: 16px;
-            color: #EAEAEA;
-            margin-top: 5px;
-            font-style: italic;
-        }
-
-        .contact-info {
-            text-align: right;
-        }
-
-        .contact-info a {
-            color: #FFD700;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 8px;
-            font-size: 16px;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 60px 0;
-            background: linear-gradient(to bottom, #2B2D42, #1E1E2F);
-            border-bottom: 1px solid #FFD700;
-            margin-bottom: 40px;
-        }
-
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            color: #FFD700;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-        }
-
-        .hero p {
-            font-size: 20px;
-            max-width: 700px;
-            margin: 0 auto;
-            color: #EAEAEA;
-        }
-
-        .counter {
-            background-color: #FFD700;
-            color: #1E1E2F;
-            font-weight: bold;
-            padding: 8px 16px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-top: 20px;
-            font-size: 20px;
-        }
-
-        /* Tools Grid */
-        .tools-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            margin-top: 30px;
+            gap: 20px;
+            max-width: 900px;
+            margin: 40px auto;
         }
 
         .tool-card {
-            background-color: #3A3D5B;
-            border-radius: 12px;
-            padding: 25px;
+            background: #3A3D5B;
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 280px;
+            transition: 0.3s;
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2);
         }
 
         .tool-card:hover {
-            background-color: #FFD700;
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
-        }
-
-        .tool-card:hover h3,
-        .tool-card:hover p {
+            background: #FFD700;
             color: #1E1E2F;
         }
 
-        .tool-icon {
-            font-size: 40px;
-            color: #FFD700;
-            margin-bottom: 15px;
-        }
-
-        .tool-card:hover .tool-icon {
-            color: #1E1E2F;
-        }
-
-        .tool-card h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
-            color: #EAEAEA;
-            transition: color 0.3s ease;
-        }
-
-        .tool-card p {
-            color: #CCCCCC;
-            margin-bottom: 20px;
-            transition: color 0.3s ease;
+        .tool-card h2 {
+            margin-bottom: 10px;
         }
 
         .btn {
             display: inline-block;
-            background-color: #FFD700;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #FFD700;
             color: #1E1E2F;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-size: 16px;
+            transition: 0.3s;
         }
 
         .btn:hover {
-            background-color: #E6C200;
+            background: #E6C200;
         }
 
-        /* Categories */
-        .categories {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 30px 0;
-        }
-
-        .category-btn {
-            background-color: #2B2D42;
-            color: #EAEAEA;
-            border: 1px solid #FFD700;
-            padding: 10px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .category-btn:hover,
-        .category-btn.active {
-            background-color: #FFD700;
-            color: #1E1E2F;
-        }
-
-        /* Features Section */
-        .features {
-            margin: 60px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 40px;
-            color: #FFD700;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .feature {
-            background-color: #2B2D42;
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature i {
-            font-size: 36px;
-            color: #FFD700;
-            margin-bottom: 15px;
-        }
-
-        .feature h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: #EAEAEA;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 20px;
-            color: #CCCCCC;
-            border-top: 1px solid #3A3D5B;
-        }
-
-        .footer-contact {
-            margin: 20px 0;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 900px) {
-            .tools-grid {
+        @media (max-width: 768px) {
+            .container {
                 grid-template-columns: 1fr;
-                max-width: 600px;
-                margin: 0 auto;
-            }
-            
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero h1 {
-                font-size: 32px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .logo {
-                margin-bottom: 10px;
-            }
-            
-            .contact-info {
-                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <i class="fas fa-tools logo-icon"></i>
-                    <div>
-                        <div class="logo-text">Katariya Tools</div>
-                        <div class="tagline">Sab Karigari Ek Sthan!</div>
-                    </div>
-                </div>
-                <div class="contact-info">
-                    <a href="mailto:katariyatools@gmail.com">
-                        <i class="fas fa-envelope"></i>
-                        katariyatools@gmail.com
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <h1>45+ Powerful Tools for Your Digital Needs</h1>
-            <p>All-in-one solution for image, video, audio processing, financial calculations and more</p>
-            <div class="counter">45+ Tools Available</div>
-        </div>
-    </section>
-
+    <div class="header">Multi Tool Hub</div>
+    
     <div class="container">
-        <h2 class="section-title">Tool Categories</h2>
-        <div class="categories">
-            <button class="category-btn active">All Tools</button>
-            <button class="category-btn">Image Tools</button>
-            <button class="category-btn">Video Tools</button>
-            <button class="category-btn">Audio Tools</button>
-            <button class="category-btn">Calculators</button>
-            <button class="category-btn">Converters</button>
+        <div class="tool-card">
+            <h2>Image Converter</h2>
+            <p>Convert images to different formats easily.</p>
+            <button class="btn" onclick="goToSection('image-converter')">Go to Tool</button>
         </div>
 
-        <h2 class="section-title">Our Tools</h2>
-        <div class="tools-grid">
-            <!-- Image Tools -->
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-exchange-alt tool-icon"></i>
-                    <h3>Image Converter</h3>
-                    <p>Convert images between different formats (JPG, PNG, WEBP, etc.) with ease</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Image Converter')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-compress-arrows-alt tool-icon"></i>
-                    <h3>Image Compressor</h3>
-                    <p>Reduce image file size without losing quality for faster websites and apps</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Image Compressor')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-crop-alt tool-icon"></i>
-                    <h3>Image Crop</h3>
-                    <p>Crop and resize your images to perfect dimensions for social media or websites</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Image Crop')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-expand-arrows-alt tool-icon"></i>
-                    <h3>Image Resizer</h3>
-                    <p>Resize your images to any dimension while maintaining aspect ratio</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Image Resizer')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-magic tool-icon"></i>
-                    <h3>Image Enhancer</h3>
-                    <p>Enhance image quality, adjust brightness, contrast and apply filters</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Image Enhancer')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-file-image tool-icon"></i>
-                    <h3>PNG to JPG</h3>
-                    <p>Convert PNG images to JPG format with customizable quality settings</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('PNG to JPG')">Use Tool</button>
-            </div>
-
-            <!-- Video Tools -->
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-film tool-icon"></i>
-                    <h3>Video Converter</h3>
-                    <p>Convert videos between MP4, AVI, MOV, and other popular formats</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Video Converter')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-cut tool-icon"></i>
-                    <h3>Video Trimmer</h3>
-                    <p>Trim and cut videos to remove unwanted parts and create perfect clips</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Video Trimmer')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-compress tool-icon"></i>
-                    <h3>Video Compressor</h3>
-                    <p>Compress video files without significant quality loss for easy sharing</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Video Compressor')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-photo-video tool-icon"></i>
-                    <h3>Video to GIF</h3>
-                    <p>Convert video clips to animated GIFs with customizable settings</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Video to GIF')">Use Tool</button>
-            </div>
-
-            <!-- Audio Tools -->
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-music tool-icon"></i>
-                    <h3>Audio Trim</h3>
-                    <p>Trim and edit audio files, remove unwanted parts, and save in desired format</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Audio Trim')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-file-audio tool-icon"></i>
-                    <h3>MP3 Converter</h3>
-                    <p>Convert audio files to MP3 format with adjustable bitrate settings</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('MP3 Converter')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-volume-up tool-icon"></i>
-                    <h3>Audio Extractor</h3>
-                    <p>Extract audio from video files and save it in various audio formats</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Audio Extractor')">Use Tool</button>
-            </div>
-
-            <!-- Calculators -->
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-birthday-cake tool-icon"></i>
-                    <h3>Age Calculator</h3>
-                    <p>Calculate exact age, time until next birthday, or time between two dates</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Age Calculator')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-calculator tool-icon"></i>
-                    <h3>EMI Calculator</h3>
-                    <p>Calculate your Equated Monthly Installments for loans with detailed breakdown</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('EMI Calculator')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-chart-line tool-icon"></i>
-                    <h3>SIP Calculator</h3>
-                    <p>Plan your investments with Systematic Investment Plan returns calculator</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('SIP Calculator')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-percent tool-icon"></i>
-                    <h3>Percentage Calculator</h3>
-                    <p>Calculate percentages, increases, decreases, and percentage differences</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Percentage Calculator')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-ruler tool-icon"></i>
-                    <h3>Unit Converter</h3>
-                    <p>Convert between different units of length, weight, temperature, and more</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Unit Converter')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-money-bill-wave tool-icon"></i>
-                    <h3>Currency Converter</h3>
-                    <p>Convert between world currencies with up-to-date exchange rates</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Currency Converter')">Use Tool</button>
-            </div>
-
-            <!-- Additional Tools -->
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-qrcode tool-icon"></i>
-                    <h3>QR Code Generator</h3>
-                    <p>Create custom QR codes for URLs, contact information, and more</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('QR Code Generator')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-font tool-icon"></i>
-                    <h3>Text Editor</h3>
-                    <p>Advanced text editor with formatting, word count, and text transformation</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Text Editor')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-clock tool-icon"></i>
-                    <h3>Time Zone Converter</h3>
-                    <p>Convert times between different time zones around the world</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Time Zone Converter')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-calendar-alt tool-icon"></i>
-                    <h3>Date Calculator</h3>
-                    <p>Add or subtract days from a date, calculate difference between dates</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Date Calculator')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-key tool-icon"></i>
-                    <h3>Password Generator</h3>
-                    <p>Generate strong, secure passwords with customizable parameters</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('Password Generator')">Use Tool</button>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <i class="fas fa-file-pdf tool-icon"></i>
-                    <h3>PDF to Word</h3>
-                    <p>Convert PDF documents to editable Word documents while preserving formatting</p>
-                </div>
-                <button class="btn" onclick="redirectToTool('PDF to Word')">Use Tool</button>
-            </div>
+        <div class="tool-card">
+            <h2>Image Compressor</h2>
+            <p>Compress images without losing quality.</p>
+            <button class="btn" onclick="goToSection('image-compressor')">Go to Tool</button>
         </div>
 
-        <div class="more-tools">
-            <h3 style="text-align: center; margin: 40px 0 20px; color: #FFD700;">And many more tools...</h3>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
-                <span class="tool-tag">Word to PDF</span>
-                <span class="tool-tag">PDF Merger</span>
-                <span class="tool-tag">PDF Splitter</span>
-                <span class="tool-tag">BMI Calculator</span>
-                <span class="tool-tag">Gratuity Calculator</span>
-                <span class="tool-tag">Color Picker</span>
-                <span class="tool-tag">Base64 Encoder</span>
-                <span class="tool-tag">Base64 Decoder</span>
-                <span class="tool-tag">MD5 Generator</span>
-                <span class="tool-tag">SHA Generator</span>
-                <span class="tool-tag">URL Encoder</span>
-                <span class="tool-tag">URL Decoder</span>
-                <span class="tool-tag">HTML Formatter</span>
-                <span class="tool-tag">JSON Formatter</span>
-                <span class="tool-tag">XML Formatter</span>
-                <span class="tool-tag">CSS Formatter</span>
-                <span class="tool-tag">HTML to Markdown</span>
-              HTML</span>
-            </div>
+        <div class="tool-card">
+            <h2>Image Crop</h2>
+            <p>Crop images to the desired size and dimensions.</p>
+            <button class="btn" onclick="goToSection('image-crop')">Go to Tool</button>
         </div>
 
-        <section class="features">
-            <h2 class="section-title">Why Choose Katariya Tools?</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Lightning Fast</h3>
-                    <p>All tools optimized for speed and performance</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-lock"></i>
-                    <h3>Secure & Private</h3>
-                    <p>Your files are processed locally and never uploaded</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Mobile Friendly</h3>
-                    <p>Works perfectly on all devices and screen sizes</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-tools"></i>
-                    <h3>45+ Tools</h3>
-                    <p>Wide range of tools for all
-                      your needs</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-free-code-camp"></i>
-                    <h3>100% Free</h3>
-                    <p>All tools are completely free to use</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-user-friends"></i>
-                    <h3>Easy to Use</h3>
-                    <p>Simple and intuitive interface for everyone</p>
-                </div>
-            </div>
-        </section>
+        <div class="tool-card">
+            <h2>Video Converter</h2>
+            <p>Convert videos to different formats quickly.</p>
+            <button class="btn" onclick="goToSection('video-converter')">Go to Tool</button>
+        </div>
+
+        <div class="tool-card">
+            <h2>Age Calculator</h2>
+            <p>Find your exact age in years, months, and days.</p>
+            <button class="btn" onclick="goToSection('age-calculator')">Go to Tool</button>
+        </div>
+
+        <div class="tool-card">
+            <h2>EMI Calculator</h2>
+            <p>Calculate your loan EMIs quickly.</p>
+            <button class="btn" onclick="goToSection('emi-calculator')">Go to Tool</button>
+        </div>
+
+        <div class="tool-card">
+            <h2>SIP Calculator</h2>
+            <p>Calculate your SIP returns effortlessly.</p>
+            <button class="btn" onclick="goToSection('sip-calculator')">Go to Tool</button>
+        </div>
+
+        <div class="tool-card">
+            <h2>Audio Trim</h2>
+            <p>Trim audio files to your required length.</p>
+            <button class="btn" onclick="goToSection('audio-trim')">Go to Tool</button>
+        </div>
     </div>
 
-    <footer>
-        <div class="container">
-            <div class="logo">
-                <i class="fas fa-tools logo-icon"></i>
-                <div class="logo-text">Katariya Tools</div>
-            </div>
-            <p>Your all-in-one solution for digital tools</p>
-            
-            <div class="footer-contact">
-                <a href="mailto:katariyatools@gmail.com" style="color: #FFD700; text-decoration: none;">
-                    <i class="fas fa-envelope"></i> katariyatools@gmail.com
-                </a>
-            </div>
-            
-            <p>&copy; 2023 Katariya Tools. All rights reserved.</p>
-        </div>
-    </footer>
-
-  <script>
-        function redirectToTool(toolName) {
-            alert(`Redirecting to ${toolName}`);
-            // In a real application, you would redirect to the actual tool page
-            // window.location.href = `/tools/${toolName.toLowerCase().replace(' ', '-')}`;
+    <script>
+        function goToSection(sectionId) {
+            alert('Redirecting to ' + sectionId + ' (Page under development)');
+            // Replace with actual navigation logic when the pages are ready
         }
-
-        // Simple category filter functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const categoryButtons = document.querySelectorAll('.category-btn');
-            
-            categoryButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    categoryButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    // In a real application, you would filter tools here
-                    alert(`Filtering by: ${this.textContent}`);
-                });
-            });
-        });
     </script>
 </body>
 </html>
-                    
